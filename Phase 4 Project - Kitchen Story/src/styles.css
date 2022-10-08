@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; /* npm install bootstrap */
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'; /* npm install bootstrap-icons */
+@import '../node_modules/css-star-rating/css/star-rating.css';
+
+*{
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(233, 232, 232, 0.5) ), url('assets/images/autumn soup.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: 100;
+  height: 20vh;
+}
+
+div .message{
+  color: #db5461;
+  background-color: whitesmoke;
+  border-radius: 5rem;
+  padding: .7rem 1rem;
+  margin: 1rem;
+}
+
+/* make "Go to homepage" look like a button */
+div a{
+  font-size: 1rem;
+  background-color: #f87666; /* #e72929 */
+  color: white; /* white */
+  border-radius: 10rem;
+  padding: .7rem 1rem;
+  margin: 1rem;
+  opacity: .8;
+}
+div a:hover{
+  opacity: 1;
+  cursor: pointer;
+}

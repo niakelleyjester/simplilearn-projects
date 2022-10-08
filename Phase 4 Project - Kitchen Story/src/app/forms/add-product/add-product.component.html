@@ -1,0 +1,126 @@
+<h2>Add Product Form</h2>
+<div class="container">
+  <div class="row">
+    <div class="forminput">
+          <!-- Tell Angular that we have created a FormGroup and its FormControls
+               explicitly so that Angular will not create them for us
+               Property Binding: Bind the addProductForm property to the form, using the formGroup directive
+               We will also use two-way binding between the addProductForm and the Product model
+          -->
+          <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()"> <!-- #addProduct="ngForm"-->
+
+            <div class="form-group">
+              <label>Brand Name</label>
+              <input type="text"
+              formControlName="pbrand"
+              class="form-control"
+              [(ngModel)] = "newProduct.brand">
+            </div> <!-- brand name form group-->
+
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text"
+              formControlName="pname"
+              class="form-control"
+              [(ngModel)] = "newProduct.productName"
+              [ngClass]="{'is-invalid':submitted && getFormControls['pname'].errors}">
+              <!-- Define Validator Message-->
+              <div *ngIf="submitted && getFormControls['pname'].errors" class="invalid-feedback">
+                <div *ngIf="getFormControls['pname'].errors['required']">
+                    Product Name cannot be Empty
+                </div>
+              </div> <!-- validator msg-->
+            </div> <!-- product name form group-->
+
+            <div class="form-group">
+              <div class="form-check form-check-inline">
+                <input type="radio"
+                    class="form-check-input form-control"
+                    formControlName="porganic"
+                    value="true"
+                    (change)="onChange($event)"
+                    [(ngModel)] = "newProduct.organic">
+                <label>Organic Product</label>
+              </div>
+            </div> <!-- Organic Product form group-->
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number"
+                formControlName="pprice"
+                class="form-control"
+                [(ngModel)] = "newProduct.price"
+                [ngClass]="{'is-invalid':submitted && getFormControls['pprice'].errors}">
+                <!-- Define Validator Message-->
+                <div *ngIf="submitted && getFormControls['pprice'].errors" class="invalid-feedback">
+                  <div *ngIf="getFormControls['pprice'].errors['required']">
+                      Product Price cannot be Empty
+                  </div>
+                </div>
+              </div>
+            </div> <!-- product price form group-->
+
+            <div class="form-group">
+              <label>Product Rating</label>
+               <input type="number"
+                formControlName="prating"
+                class="form-control"
+                [(ngModel)] = "newProduct.rating"
+                [ngClass]="{'is-invalid':submitted && getFormControls['prating'].errors}">
+                <!-- Define Validator Message-->
+                <div *ngIf="submitted && getFormControls['prating'].errors" class="invalid-feedback">
+                      Product Rating must be between 0-5
+                </div>
+            </div> <!-- product rating form group-->
+
+            <div class="form-group">
+                <label>Number of Customer Reviews</label>
+                <input type="number"
+                formControlName="pnumrevs"
+                class="form-control"
+                [(ngModel)] = "newProduct.numOfReviews">
+            </div> <!-- number of customer reviews form group-->
+
+            <div class="form-group">
+                <label>Product Description</label>
+                <input type="text"
+                formControlName="pdescription"
+                class="form-control"
+                [(ngModel)] = "newProduct.description">
+            </div> <!-- product description form group-->
+
+            <!-- @TODO: Convert Text field to multi-select option box for tags -->
+            <div class="form-group">
+                <label>Product Categories/Tags</label>
+                <input type="text"
+                formControlName="ptags"
+                class="form-control"
+                [(ngModel)] = "newProduct.tags">
+            </div> <!-- tags form group-->
+
+            <div class="form-group">
+              <label>Base Name of Image File</label>
+              <p>In this version of the application, you have to upload the image to the src/assets/images folder. This is NOT an file upload function. </p>
+              <input type="text"
+              formControlName="pimagename"
+              class="form-control"
+              [(ngModel)] = "newProduct.imageUrl">
+            </div> <!-- image name form group-->
+
+              <!--Adding buttons to submit the form or go back to Homepage-->
+              <div class="form-group">
+                  <button type="submit" class="button btn">Add Product</button> <!-- [disabled]="!addProduct.form.valid"-->
+                  <button class="button btn" routerLink="/home">Return to Homepage</button>
+              </div> <!-- button formgroup-->
+          </form>
+      </div> <!-- forminput -->
+  </div> <!-- row-->
+</div> <!-- container-->
+
+<div class="container" [hidden]="!submitted">
+  You submitted the following new product:
+  {{newProduct.productName}} for {{newProduct.price | currency}}
+</div><!-- container-->

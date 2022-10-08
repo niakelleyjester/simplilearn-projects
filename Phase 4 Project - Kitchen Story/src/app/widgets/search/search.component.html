@@ -1,0 +1,6 @@
+<div>
+    <!-- binding the search term to the view -->
+    <!-- One Way Binding <input type="text" placeholder="Search Kitchen Story" [value]="searchTerm"> -->
+    <input type="text" placeholder="Search Kitchen Story" [(ngModel)]="searchTerm" (change)="search()">
+    <button (click)="search()">Search</button>
+</div>

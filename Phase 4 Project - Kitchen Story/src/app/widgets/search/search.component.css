@@ -1,0 +1,37 @@
+div{
+    display: flex; /* to be responsive to the viewport */
+    justify-content: center; /* put the search bar in the middle (centered horizontally) of the page */
+    margin-top: 3rem; /* have some padding */
+    margin-bottom: 1.5rem;
+
+}
+
+div input{
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    height: 3rem;
+    width: 20rem;
+    background-color: #f1f1f1; /* #f1f1f1 */
+    padding: 1.2rem; /* have some space between the box and the term input*/
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+div button{
+    color: gray; /* button */
+    height: 3rem; /*to be exactly the same height as the search box*/
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    border: none;
+    background-color: #f87666; /* #e72929 */
+    color: white; /* white */
+    opacity: .8;
+    outline: none;
+}
+
+div button:hover{
+    opacity: 1;
+    cursor: pointer;
+}

@@ -1,0 +1,47 @@
+<app-search></app-search>
+<h2>Categories</h2>
+<app-tags></app-tags>
+<h2>Available Items </h2>
+<app-not-found [visible]="!products || products.length <=0"
+                notFoundMessage="Nothing Found in the Pantry" resetLinkText="Return to Homepage">
+</app-not-found>
+
+<ul>
+    <li *ngFor="let product of products">
+      <a routerLink="/product/{{product.productId}}">
+        <!-- Show all the product details as a hyperlink -->
+        <img src={{product.imageUrl}} class="img-fluid" alt={{product.productName}} />
+        <div class="content">
+          <div class="brand">
+            {{product.brand}}
+          </div> <!-- brand -->
+          <div class="name">
+            {{product.productName}}
+          </div> <!-- name -->
+          <div class="stars direction-rtl">
+              <star-rating
+              [rating]="product.rating"
+              [numOfStars]="5"
+              [showHalfStars]="true"
+              [readOnly]="true"
+              >
+              </star-rating>
+          </div> <!-- stars -->
+          <span class="numRev">
+            ({{product.numOfReviews}})
+          </span>
+
+          <div class="price">
+            <span>
+                 {{product.price|currency}} <!-- Currency pipe to format data -->
+             </span>
+          </div> <!-- price -->
+          <div class="description">
+                    {{product.description | truncate:80}} <!-- Custom pipe to truncate description if it's more than 50 characters -->
+          </div> <!-- description -->
+        </div>  <!--content -->
+      </a>
+    </li>
+</ul>
+
+
