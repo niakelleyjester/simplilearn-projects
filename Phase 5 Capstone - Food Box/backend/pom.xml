@@ -12,7 +12,7 @@
 	<artifactId>FoodBoxBackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FoodBoxBackend</name>
-	<description>Employee Manager App with Spring Boot Backend and Angular Frontend</description>
+	<description>FoodBox App with Spring Boot Backend and Angular Frontend</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
