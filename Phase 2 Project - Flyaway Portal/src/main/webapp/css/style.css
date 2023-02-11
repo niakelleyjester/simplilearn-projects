@@ -1,0 +1,51 @@
+.img-test{
+  border-radius: 4px;  /* Rounded border */
+  padding: 2px; /* Some padding */
+  width: 100px; /* Set a small width */
+  height: auto;
+}
+
+/* Add a hover effect (dk green shadow) */
+.img-test:hover{
+	box-shadow: 0 0 2px 1px rgba(0, 100, 0, 0.5);
+	cursor: pointer;
+}
+
+.add-user-button {
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 120px; 
+	padding: 5px 10px; 	
+	margin-bottom: 15px;
+	background: #cccccc;
+}
+
+/* Create a top navigation bar */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create a left-aligned (split) link inside the navigation bar */
+.split {
+  float: left;
+  color: white;
+}
